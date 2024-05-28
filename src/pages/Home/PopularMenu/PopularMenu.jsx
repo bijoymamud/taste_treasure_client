@@ -22,13 +22,13 @@ const PopularMenu = () => {
   }, [])
 
   return (
-    <section>
+    <section className="">
 
-      <SectionTitle subHeading={"Popular Items"}
+      <SectionTitle subHeading={"Check it Out"}
         heading={"FROM OUR MENU"}>
       </SectionTitle>
 
-      <div className="grid md:grid-cols-2 gap-5">
+      <div className="grid md:grid-cols-2 gap-5 my-20">
         {
           menu.map((singleItem) => <MenuItems
 
