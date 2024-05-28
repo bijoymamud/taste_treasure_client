@@ -16,7 +16,7 @@ const Navbar = () => {
   </>
   return (
     <>
-      <div className="navbar bg-base-100">
+      <div className="navbar fixed text-white z-10 bg-opacity-40 max-w-screen-xl mx-auto bg-black">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -26,7 +26,7 @@ const Navbar = () => {
               {navOptions}
             </ul>
           </div>
-          <img className="w-[100px]" src="https://i.ibb.co/NV2XnyS/Black-White-Minimalist-Business-Logo-1-removebg-preview.png" alt="" />
+          <img className="w-[100px]" src="https://i.ibb.co/SRBrWWb/Black-White-Minimalist-Business-Logo-2-removebg-preview.png" alt="" />
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
