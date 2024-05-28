@@ -1,6 +1,7 @@
-import React from 'react';
+
 import Banner from '../Banner/Banner';
 import Catagories from '../Catagories/Catagories';
+import PopularMenu from '../PopularMenu/PopularMenu';
 import SecondBanner from '../secondBanner/SecondBanner';
 
 const Home = () => {
@@ -9,6 +10,7 @@ const Home = () => {
       <Banner />
       <Catagories />
       <SecondBanner />
+      <PopularMenu />
     </div >
   );
 };
