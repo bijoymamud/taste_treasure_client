@@ -1,4 +1,5 @@
 
+import { Helmet } from 'react-helmet';
 import Banner from '../Banner/Banner';
 import Catagories from '../Catagories/Catagories';
 import ChefRecc from '../ChefRecommand/ChefRecc';
@@ -11,6 +12,9 @@ import SecondBanner from '../secondBanner/SecondBanner';
 const Home = () => {
   return (
     <div>
+      <Helmet>
+        <title>Taste Treasure | Home</title>
+      </Helmet>
       <Banner />
       <Catagories />
       <SecondBanner />
