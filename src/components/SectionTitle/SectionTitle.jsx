@@ -14,8 +14,11 @@ const SectionTitle = ({ heading, subHeading }) => {
 
         </blockquote>
 
-        <h3 className="text-3xl uppercase "></h3>
+        {/* <h3 className="text-3xl uppercase "></h3> */}
       </div>
+
+
+
 
     </div>
 
