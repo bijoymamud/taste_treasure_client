@@ -19,7 +19,7 @@ const Defferts = () => {
 
   return (
     <section>
-      <div className="md:mb-24">
+      <div className="md:mb-24 mt-10">
         <div className="hero min-h-96 bg-fixed " style={{ backgroundImage: 'url(https://i.postimg.cc/Pf6dzRHm/chef-service.jpg) ' }}>
           <div className="hero-overlay bg-opacity-50"></div>
           <div className="hero-content text-center text-neutral-content " >

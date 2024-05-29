@@ -1,6 +1,7 @@
 import { Helmet } from "react-helmet";
 import PopularMenu from "../Home/PopularMenu/PopularMenu";
 import Defferts from "./Defferts";
+import Pizza from "./Pizza";
 
 const OurMenu = () => {
   return (
@@ -25,9 +26,11 @@ const OurMenu = () => {
         <Defferts />
       </div>
 
-      {/* <div>
-        <MenuTitle disName="Pizza"></MenuTitle>
-      </div> */}
+      <div className="md:mt-20">
+        <Pizza />
+      </div>
+
+
     </section>
   );
 };
