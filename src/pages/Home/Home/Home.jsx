@@ -5,6 +5,7 @@ import ChefRecc from '../ChefRecommand/ChefRecc';
 import FeatureMenu from '../FeatureMenu/FeatureMenu';
 import PopularMenu from '../PopularMenu/PopularMenu';
 import Telephone from '../Telephone/Telephone';
+import Testimonial from '../Testimonial/Testimonial';
 import SecondBanner from '../secondBanner/SecondBanner';
 
 const Home = () => {
@@ -17,6 +18,7 @@ const Home = () => {
       <Telephone />
       <ChefRecc />
       <FeatureMenu />
+      <Testimonial />
     </div >
   );
 };
