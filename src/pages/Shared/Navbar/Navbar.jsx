@@ -1,19 +1,34 @@
+import { Link } from "react-router-dom";
 
 
 const Navbar = () => {
 
 
   const navOptions = <>
-    <li className="uppercase"><a>Home</a></li>
-    <li>
-      <a className="uppercase">Contact Us</a>
+    <li tabIndex={0}>
+      <Link className='font-bold text-lg focus:text-yellow-500 active:text-white' to="/">Home</Link>
 
     </li>
-    <li><a className="uppercase">Dashboard</a></li>
-    <li><a className="uppercase">Our Menu</a></li>
-    <li><a className="uppercase">Our Shop</a></li>
+    <li tabIndex={0}>
+      <Link className='font-bold text-lg focus:text-yellow-500 active:text-white' to="/ourMenu">Our Menu</Link>
+
+    </li>
+    <li tabIndex={0}>
+      <Link className='font-bold text-lg focus:text-yellow-500 active:text-white' to="/contact">Contact Us</Link>
+
+    </li>
+    <li tabIndex={0}>
+      <Link className='font-bold text-lg focus:text-yellow-500 active:text-white' to="/">Dashboard</Link>
+
+    </li>
+    <li tabIndex={0}>
+      <Link className='font-bold text-lg focus:text-yellow-500 active:text-white' to="/">Our Shop</Link>
+
+    </li>
 
   </>
+
+
   return (
     <>
       <div className="navbar fixed text-white z-10 bg-opacity-40 max-w-screen-xl mx-auto bg-black">

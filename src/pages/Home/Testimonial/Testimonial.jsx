@@ -62,11 +62,11 @@ const Testimonial = () => {
                   <p>{info.details}</p>
 
                   <div className="avatar">
-                    <div className="w-20 ring ring-warning rounded-full mt-2 ring-offset-base-100 ring-offset-2">
+                    <div className="w-16 ring ring-[#714674] rounded-full mt-2 ring-offset-base-100 ring-offset-2">
                       <img src={info.img} />
                     </div>
                   </div>
-                  <p className="text-yellow-600 text-2xl font-extrabold mt-2">{info.name}</p>
+                  <p className="text-[#714674] text-2xl font-extrabold mt-2">{info.name}</p>
                   {/* <p>{info.rating}</p> */}
 
 
