@@ -2,6 +2,7 @@ import { Helmet } from "react-helmet";
 import PopularMenu from "../Home/PopularMenu/PopularMenu";
 import Defferts from "./Defferts";
 import Pizza from "./Pizza";
+import Salad from "./Salad";
 
 const OurMenu = () => {
   return (
@@ -28,6 +29,10 @@ const OurMenu = () => {
 
       <div className="md:mt-20">
         <Pizza />
+      </div>
+
+      <div className="md:mt-20">
+        <Salad />
       </div>
 
 

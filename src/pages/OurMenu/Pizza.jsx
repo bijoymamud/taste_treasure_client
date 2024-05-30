@@ -13,7 +13,7 @@ const Pizza = () => {
 
         const pizzaData = data.filter(infoPizza => infoPizza.category === "pizza")
         setPizza(pizzaData);
-        console.log(pizzaData);
+
       })
   }, [])
 
