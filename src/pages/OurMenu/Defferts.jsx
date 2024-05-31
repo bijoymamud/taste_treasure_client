@@ -1,21 +1,14 @@
-import { useEffect, useState } from "react";
+import useMenu from "../../hooks/useMenu";
 import SingleDisserts from "./SingleDisserts";
 
 
 const Defferts = () => {
 
-  const [dessert, setDessert] = useState([]);
+  const [menu] = useMenu()
 
-  useEffect(() => {
-    fetch("../../../public/menu.json")
-      .then(res => res.json())
-      .then(data => {
+  const dessert = menu.filter(infoDessert => infoDessert.category === "dessert");
 
-        const dessertFood = data.filter(filterDessert => filterDessert.category === "dessert")
-        setDessert(dessertFood);
-        console.log(dessertFood);
-      })
-  }, [])
+
 
   return (
     <section>
@@ -43,7 +36,7 @@ const Defferts = () => {
 
       <div className="grid md:grid-cols-2 gap-5 my-20">
         {
-          dessert.map((infoDessert) => <SingleDisserts key={infoDessert} infoDessert={infoDessert}></SingleDisserts>)
+          dessert.map((singleDessert) => <SingleDisserts key={singleDessert} singleDessert={singleDessert}></SingleDisserts>)
         }
       </div>
 

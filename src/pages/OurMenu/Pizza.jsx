@@ -1,22 +1,12 @@
-import { useEffect, useState } from "react";
+import useMenu from "../../hooks/useMenu";
 import SinglePizza from "./SinglePizza";
 
 
 const Pizza = () => {
-  const [pizza, setPizza] = useState([]);
 
+  const [menu] = useMenu();
 
-  useEffect(() => {
-    fetch("../../../public/menu.json")
-      .then(res => res.json())
-      .then(data => {
-
-        const pizzaData = data.filter(infoPizza => infoPizza.category === "pizza")
-        setPizza(pizzaData);
-
-      })
-  }, [])
-
+  const pizza = menu.filter(infoPizza => infoPizza.category === "pizza");
 
 
   return (

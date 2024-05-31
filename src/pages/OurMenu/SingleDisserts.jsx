@@ -1,7 +1,7 @@
 
 
-const SingleDisserts = ({ infoDessert }) => {
-  const { name, recipe, image, price } = infoDessert;
+const SingleDisserts = ({ singleDessert }) => {
+  const { name, recipe, image, price } = singleDessert;
   return (
     <div>
       <div className="flex space-x-4">

@@ -3,6 +3,7 @@ import PopularMenu from "../Home/PopularMenu/PopularMenu";
 import Defferts from "./Defferts";
 import Pizza from "./Pizza";
 import Salad from "./Salad";
+import Soups from "./Soups";
 
 const OurMenu = () => {
   return (
@@ -35,6 +36,9 @@ const OurMenu = () => {
         <Salad />
       </div>
 
+      <div>
+        <Soups />
+      </div>
 
     </section>
   );

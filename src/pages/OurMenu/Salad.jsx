@@ -1,22 +1,12 @@
-import { useEffect, useState } from "react";
+import useMenu from "../../hooks/useMenu";
 import SingleSalad from "./SingleSalad";
 
 
 const Salad = () => {
 
-  const [salad, setSalad] = useState([]);
+  const [menu] = useMenu();
 
-
-  useEffect(() => {
-    fetch("../../../public/menu.json")
-      .then(res => res.json())
-      .then(data => {
-
-        const saladData = data.filter(info => info.category === "salad")
-        setSalad(saladData);
-        console.log(saladData);
-      })
-  }, [])
+  const salad = menu.filter(infoSalad => infoSalad.category === "salad");
 
   return (
     <section>

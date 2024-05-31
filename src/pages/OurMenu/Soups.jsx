@@ -1,28 +1,22 @@
-import { useEffect, useState } from "react";
+import useMenu from "../../hooks/useMenu";
+import SingleSoups from "./SingleSoups";
 
 const Soups = () => {
 
-  const [soups, setSoups] = useState([])
-
-  useEffect(() => {
-
-    fetch("../../../public/menu.json")
-      .then(res => res.json())
-      .then()
-  }, [])
-
+  const [menu] = useMenu();
+  const soups = menu.filter(infoSoups => infoSoups.category === "soup")
 
   return (
     <section>
       <div className="md:mb-24 mt-10">
-        <div className="hero min-h-96 bg-fixed " style={{ backgroundImage: 'url(https://rms.condenast.it/rms/public/5d3/f0a/a9d/thumb_3691_1200_670_0_0_auto.jpg' }}>
+        <div className="hero min-h-96 bg-fixed " style={{ backgroundImage: 'url(https://img.freepik.com/free-photo/bowl-soup-with-piece-bread-it_1340-23200.jpg?t=st=1717072670~exp=1717076270~hmac=998e3077cc2b4f6df943c570a9acfda1c69a033e88023ef3d9760f388be003a0&w=1060' }}>
           <div className="hero-overlay bg-opacity-50"></div>
           <div className="hero-content text-center text-neutral-content " >
             <div className="max-w-2xl rounded-md md:rounded-none   md:py-10 bg-opacity-40 bg-black ">
 
 
-              <h3 className=" text-amber-500 text-3xl mt-5 md:mt-0 md:text-5xl font-extrabold ">SALAD</h3>
-              <p className="w-3/4 mx-auto mt-5"> Vegetable salad is a nutritious, colorful, and versatile dish that can be served as an appetizer, side dish, or main course. It typically consists of a variety of fresh, raw vegetables that are diced, sliced, or chopped and combined together.</p>
+              <h3 className=" text-amber-500 text-3xl mt-5 md:mt-0 md:text-5xl font-extrabold ">SOUPS</h3>
+              <p className="w-3/4 mx-auto mt-5">Soup is a versatile and comforting dish made by combining ingredients such as meat, vegetables, and legumes with stock, juice, water, or another liquid. Soups can be served hot or cold, thick or thin, and can range from simple broths to hearty stews. </p>
 
 
 
@@ -34,9 +28,9 @@ const Soups = () => {
       </div>
 
       <div className="grid md:grid-cols-2 gap-5 my-20">
-        {/* {
-          salad.map((infoSalad) => <SingleSalad key={infoSalad._id} infoSalad={infoSalad}></SingleSalad>)
-        } */}
+        {
+          soups.map((infoSoups) => <SingleSoups key={infoSoups._id} infoSoups={infoSoups}></SingleSoups>)
+        }
       </div>
 
     </section>
