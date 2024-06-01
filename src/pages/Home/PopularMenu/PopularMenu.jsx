@@ -11,6 +11,8 @@ const PopularMenu = () => {
   // console.log("this is popular menu", popular);
 
 
+
+
   return (
     <section className="">
 
