@@ -6,7 +6,7 @@ const FoodCard = ({ item }) => {
     <section className="">
       <div className="card md:w-full md:h-92 glass ">
         <figure><img className="w-full h-[300px]" src={image} alt="Food Image" /></figure>
-        <div className="card-body md:h-72">
+        <div className="card-body md:max-h-64">
           <h2 className="card-title">{name}</h2>
           <p className="bg-amber-500 text-white absolute right-0 top-0 mr-4 mt-4 p-1 rounded-md cursor-pointer">${price}</p>
           <p className="w-full">{recipe}</p>

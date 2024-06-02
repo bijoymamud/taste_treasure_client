@@ -10,8 +10,8 @@ const Soups = ({ title }) => {
   return (
     <section>
       <div className="md:mb-24 mt-10">
-        <div className="hero min-h-96 bg-fixed " style={{ backgroundImage: 'url(https://img.freepik.com/free-photo/bowl-soup-with-piece-bread-it_1340-23200.jpg?t=st=1717072670~exp=1717076270~hmac=998e3077cc2b4f6df943c570a9acfda1c69a033e88023ef3d9760f388be003a0&w=1060' }}>
-          <div className="hero-overlay bg-opacity-50"></div>
+        <div className="hero min-h-96 bg-fixed " style={{ backgroundImage: 'url(https://images.pexels.com/photos/20422128/pexels-photo-20422128/free-photo-of-meal-and-soup.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' }}>
+          <div className="hero-overlay bg-opacity-70"></div>
           <div className="hero-content text-center text-neutral-content " >
             <div className="max-w-2xl rounded-md md:rounded-none   md:py-10 bg-opacity-40 bg-black ">
 

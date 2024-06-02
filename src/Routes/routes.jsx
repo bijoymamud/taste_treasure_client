@@ -4,6 +4,7 @@ import {
 import Main from "../Layout/Main";
 import ContactUs from "../pages//Contact/ContactUs";
 import Home from "../pages/Home/Home/Home";
+import Login from "../pages/Login/Login";
 import Order from "../pages/OrderFood/Order";
 import OurMenu from "../pages/OurMenu/OurMenu";
 
@@ -34,4 +35,10 @@ export const router = createBrowserRouter([
 
     ]
   },
+
+
+  {
+    path: "/login",
+    element: <Login />
+  }
 ]);
