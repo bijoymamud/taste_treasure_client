@@ -31,14 +31,15 @@ export const router = createBrowserRouter([
       {
         path: "/order/:category",
         element: <Order />
+      },
+      {
+        path: "/login",
+        element: <Login />
       }
 
     ]
   },
 
 
-  {
-    path: "/login",
-    element: <Login />
-  }
+
 ]);
