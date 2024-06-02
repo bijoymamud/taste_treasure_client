@@ -67,7 +67,7 @@
       "_id": "642c155b2c4774f05c36eea6",
       "name": "Greek Salad",
       "recipe": "Pan roasted pork belly with gratin potato, braised Savoy cabbage, apples, thyme and calvados jus",
-      "image": "https://www.thechunkychef.com/wp-content/uploads/2021/07/Greek-Salad-Recipe-recipe-card.jpg",
+      "image": "https://mccormick.widen.net/content/wo3ljmcdux/original/greek_salad_637390545932673856_2000x1125.jpg",
       "category": "salad",
       "price": 13.5
   },
@@ -131,7 +131,7 @@
       "_id": "642c155b2c4774f05c36eea5",
       "name": "Cobb Salad",
       "recipe": "Sautéed breaded veal escalope with watercress, lemon and veal jus.",
-      "image": "https://hips.hearstapps.com/hmg-prod/images/cobb-salad-index-65f1b2cbb70ee.jpg?crop=0.6668532512361227xw:1xh;center,top&resize=1200:*",
+      "image": "https://www.thespruceeats.com/thmb/5szLBn-9Gpcx7lQPl89IvycVb7g=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/classic-cobb-salad-recipe-100890-hero-01-3a162efa1df943b79d110c832281f652.jpg",
       "category": "salad",
       "price": 9.5
   },
@@ -161,9 +161,9 @@
   },
   {
       "_id": "642c155b2c4774f05c36eea8",
-      "name": "Spinach and Strawberry Salad",
+      "name": "Strawberry Salad",
       "recipe": "Pan roasted pork belly with gratin potato, braised Savoy cabbage, apples, thyme and calvados jus",
-      "image": "https://ifoodreal.com/wp-content/uploads/2018/03/FG-strawberry-spinach-salad.jpg",
+      "image": "https://www.allrecipes.com/thmb/hI5hYn1sJB2mJar0h0lechfe1PU=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/AR-14276-Strawberry-Spinach-Salad-4x3-135a121dc0b24ad693289e221dcd3477.jpg",
       "category": "salad",
       "price": 13.5
   },
@@ -195,7 +195,7 @@
       "_id": "642c155b2c4774f05c36eeb0",
       "name": "Tomato Basil Soup",
       "recipe": "Pan roasted pork belly with gratin potato, braised Savoy cabbage, apples, thyme and calvados jus",
-      "image": "https://d7q3z8w7.rocketcdn.me/wp-content/uploads/2021/08/IMG_8623-1024x683.jpg",
+      "image": "https://www.allrecipes.com/thmb/-qNhTFemY_EY4zDIJMRmb6mHOL8=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/13113-rich-and-creamy-tomato-basil-soup-DDMFS-4x3-e7bc78ff4c6b4f999f9e178d97466e6f.jpg",
       "category": "soup",
       "price": 13.5
   },
@@ -235,7 +235,7 @@
       "_id": "642c155b2c4774f05c36eeb3",
       "name": "French Onion Soup",
       "recipe": "Sautéed breaded veal escalope with watercress, lemon and veal jus.",
-      "image": "https://kristineskitchenblog.com/wp-content/uploads/2021/05/french-onion-soup-1200-square-122.jpg",
+      "image": "https://assets.epicurious.com/photos/54e604564f77a310045d6212/master/pass/51248680_french-onion-soup-2_6x4-hpr.jpg",
       "category": "soup",
       "price": 9.5
   },
@@ -243,7 +243,7 @@
       "_id": "642c155b2c4774f05c36eeb5",
       "name": "Minestrone Soup",
       "recipe": "Sautéed breaded veal escalope with watercress, lemon and veal jus.",
-      "image": "https://iwashyoudry.com/wp-content/uploads/2023/10/Minestrone-Soup-10-500x500.jpg",
+      "image": "https://images.immediate.co.uk/production/volatile/sites/30/2021/03/Classic-Minestrone-Soup-13720e5.jpg?resize=900%2C471",
       "category": "soup",
       "price": 9.5
   },
@@ -378,7 +378,7 @@
   {
       "_id": "642c155b2c4774f05c36eeac",
       "name": "Quinoa Salad",
-      "recipe": "Chargrilled chicken with avocado, baby gem lettuce, baby spinach, shallots, French beans, walnuts, croutons and a mustard dressing",
+      "recipe": "Chargrilled chicken with avocado, baby gem lettuce, baby spinach, shallots, French beans.",
       "image": "https://cookingwithayeh.com/wp-content/uploads/2021/09/Quinoa-Salad-0.jpg",
       "category": "salad",
       "price": 14.5

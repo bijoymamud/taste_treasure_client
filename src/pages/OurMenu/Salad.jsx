@@ -6,6 +6,10 @@ const Salad = () => {
 
   const [menu] = useMenu();
 
+  // if (loading) {
+  //   return <span className="loading loading-bars loading-lg mx-auto text- flex items-center"></span>
+  // }
+
   const salad = menu.filter(infoSalad => infoSalad.category === "salad");
 
   return (

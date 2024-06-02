@@ -14,7 +14,7 @@ const useMenu = () => {
         setTimeout(() => {
           setMenu(data);
           setLoading(false)
-        }, 1000)
+        })
 
       })
 

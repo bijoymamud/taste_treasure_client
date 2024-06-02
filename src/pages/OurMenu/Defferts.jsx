@@ -6,6 +6,10 @@ const Defferts = () => {
 
   const [menu, loading] = useMenu()
 
+  if (loading) {
+    return <span className="loading loading-bars loading-lg mx-auto text- flex items-center"></span>
+  }
+
   const dessert = menu.filter(infoDessert => infoDessert.category === "dessert");
 
 
