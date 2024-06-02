@@ -22,7 +22,7 @@ const Navbar = () => {
 
     </li>
     <li tabIndex={0}>
-      <Link className='font-bold text-lg focus:text-yellow-500 active:text-white' to="/order">Order Food</Link>
+      <Link className='font-bold text-lg focus:text-yellow-500 active:text-white' to="/order/salad">Order Food</Link>
 
     </li>
 

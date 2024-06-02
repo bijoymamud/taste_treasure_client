@@ -1,8 +1,9 @@
+import { Link } from "react-router-dom";
 import useMenu from "../../hooks/useMenu";
 import SinglePizza from "./SinglePizza";
 
 
-const Pizza = () => {
+const Pizza = ({ title }) => {
 
   const [menu] = useMenu();
 
@@ -44,6 +45,8 @@ const Pizza = () => {
           pizza.map((infoPizza) => <SinglePizza key={infoPizza} infoPizza={infoPizza}></SinglePizza>)
         }
       </div>
+
+      <div className=" text-center "><Link to={`/order/${title}`} className="uppercase btn btn-secondary   bg-gradient-to-r md:mt-2 hover:from-yellow-500 hover:to-pink-500  border-none from-green-400 to-blue-500">Order now</Link></div>
 
     </section>
   );

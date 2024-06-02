@@ -11,7 +11,7 @@ const OurMenu = () => {
 
 
   return (
-    <section>
+    <section className="mb-20">
 
       <Helmet>
         <title>Taste Treasure | Menu</title>
@@ -29,19 +29,19 @@ const OurMenu = () => {
 
       <PopularMenu />
       <div className="md:mt-20">
-        <Defferts />
+        <Defferts title="dessert" />
       </div>
 
       <div className="md:mt-20">
-        <Pizza />
+        <Pizza title={"pizza"} />
       </div>
 
       <div className="md:mt-20">
-        <Salad />
+        <Salad title={"salad"} />
       </div>
 
       <div>
-        <Soups />
+        <Soups title={"soup"} />
       </div>
 
     </section>

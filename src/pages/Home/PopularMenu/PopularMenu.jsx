@@ -30,7 +30,7 @@ const PopularMenu = () => {
           ></MenuItems>)
         }
       </div>
-      <div className=" text-center "><Link to='/' className="uppercase btn btn-secondary   bg-gradient-to-r md:mt-2 hover:from-yellow-500 hover:to-pink-500  border-none from-green-400 to-blue-500">View  Full Menu</Link></div>
+      <div className=" text-center "><Link to='/order' className="uppercase btn btn-secondary   bg-gradient-to-r md:mt-2 hover:from-yellow-500 hover:to-pink-500  border-none from-green-400 to-blue-500">View  Full Menu</Link></div>
     </section>
   );
 };

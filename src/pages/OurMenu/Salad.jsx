@@ -1,8 +1,9 @@
+import { Link } from "react-router-dom";
 import useMenu from "../../hooks/useMenu";
 import SingleSalad from "./SingleSalad";
 
 
-const Salad = () => {
+const Salad = ({ title }) => {
 
   const [menu] = useMenu();
 
@@ -38,6 +39,8 @@ const Salad = () => {
           salad.map((infoSalad) => <SingleSalad key={infoSalad._id} infoSalad={infoSalad}></SingleSalad>)
         }
       </div>
+
+      <div className=" text-center "><Link to={`/order/${title}`} className="uppercase btn btn-secondary   bg-gradient-to-r md:mt-2 hover:from-yellow-500 hover:to-pink-500  border-none from-green-400 to-blue-500">order now</Link></div>
 
     </section>
   );
