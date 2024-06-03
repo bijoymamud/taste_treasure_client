@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { Helmet } from 'react-helmet';
 import { FcGoogle } from "react-icons/fc";
 import { Link } from "react-router-dom";
+import Swal from 'sweetalert2';
 import { AuthContext } from '../../providers/AuthProviders';
 
 
@@ -20,6 +21,14 @@ const Login = () => {
       .then(result => {
         const user = result.user;
         console.log(user);
+
+        Swal.fire({
+          position: "center",
+          icon: "success",
+          title: "Successfully Loged In",
+          showConfirmButton: false,
+          timer: 1500
+        });
 
       })
 

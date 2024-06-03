@@ -10,8 +10,7 @@ const SignUp = () => {
   const {
     register,
     handleSubmit,
-    reset,
-    watch,
+
     formState: { errors }
   } = useForm();
 
@@ -25,6 +24,9 @@ const SignUp = () => {
       .then(result => {
         const loggedUser = result.user;
         console.log(loggedUser);
+
+
+
       })
   }
 
@@ -63,6 +65,8 @@ const SignUp = () => {
               {errors.email && <span className='text-red-500'>This fild is required</span>}
             </div>
 
+
+
             <div className="space-y-1 text-sm" bis_skin_checked="1">
               <label htmlFor="password" className="block dark:text-gray-400">Password</label>
               <input type="password" name="password" id="password" placeholder="Password" className="w-full px-4 py-3 rounded-md dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 focus:dark:border-violet-400"
@@ -92,9 +96,10 @@ const SignUp = () => {
             <Link to="/login" rel="noopener noreferrer" href="#" className=" font-extrabold ms-2  dark:text-gray-500">Login</Link>
           </p>
         </div>
-      </div>
 
-    </section>
+      </div >
+
+    </section >
   );
 };
 
