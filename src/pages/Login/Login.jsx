@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import { FcGoogle } from "react-icons/fc";
 import { Link } from "react-router-dom";
 
@@ -17,6 +18,9 @@ const Login = () => {
 
   return (
     <section>
+      <Helmet>
+        <title>Taste Treasure | Login</title>
+      </Helmet>
 
       <div className='container md:flex items-center justify-evenly  gap-10  md:pt-40'>
 
