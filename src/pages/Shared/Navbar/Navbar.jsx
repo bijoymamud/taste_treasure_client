@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { FaArrowRightFromBracket } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../../providers/AuthProviders";
@@ -12,6 +12,7 @@ const Navbar = () => {
       .then(() => { })
       .catch(error => console.log(error))
   }
+
 
 
   const navOptions = <>
@@ -36,14 +37,18 @@ const Navbar = () => {
 
     </li>
 
-    <li tabIndex={0}>
-      <Link className='font-bold text-lg focus:text-yellow-500 active:text-white' to="/order/salad">
+    {user &&
 
-        Inbox
-        <div className="badge badge-error text-white">+99</div>
+      <li tabIndex={0}>
+        <Link className='font-bold text-lg focus:text-yellow-500 active:text-white' to="/order/salad">
 
-      </Link>
-    </li>
+          Inbox
+          <div className="badge badge-error text-white">+99</div>
+
+        </Link>
+      </li>
+
+    }
 
 
 
