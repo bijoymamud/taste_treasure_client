@@ -6,7 +6,7 @@ const Footer = () => {
       <div className="container flex flex-col justify-between py-10 mx-auto space-y-8 lg:flex-row lg:space-y-0">
         <div className="lg:w-1/3">
           <a rel="noopener noreferrer" href="#" className="flex justify-center space-x-3 lg:justify-start">
-          
+
             <img className="w-[150px]" src="https://i.ibb.co/NV2XnyS/Black-White-Minimalist-Business-Logo-1-removebg-preview.png" alt="" />
           </a>
         </div>
@@ -75,7 +75,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="py-6 text-sm text-center dark:text-gray-600">© 1968 Company Co. All rights reserved.</div>
+      <div className="py-6 text-sm text-center dark:text-gray-600">© 2024 Taste Treasure Restaurant Co. All rights reserved.</div>
     </footer>
   );
 };

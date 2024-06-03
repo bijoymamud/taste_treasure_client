@@ -36,7 +36,14 @@ const Navbar = () => {
 
     </li>
 
+    <li tabIndex={0}>
+      <Link className='font-bold text-lg focus:text-yellow-500 active:text-white' to="/order/salad">
 
+        Inbox
+        <div className="badge badge-error text-white">+99</div>
+
+      </Link>
+    </li>
 
 
 
