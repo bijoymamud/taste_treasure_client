@@ -2,7 +2,8 @@ import { useContext } from 'react';
 import { Helmet } from 'react-helmet';
 import { useForm } from 'react-hook-form';
 import { FcGoogle } from "react-icons/fc";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import Swal from 'sweetalert2';
 import { AuthContext } from '../../providers/AuthProviders';
 
 
@@ -10,13 +11,16 @@ const SignUp = () => {
   const {
     register,
     handleSubmit,
-
+    reset,
     formState: { errors }
   } = useForm();
 
 
-  const { createUser } = useContext(AuthContext);
+  const { createUser, updateUserProfile } = useContext(AuthContext);
+  const navigate = useNavigate();
+  const location = useLocation();
 
+  const from = location.state?.from?.pathname || "/";
 
   const onSubmit = data => {
     console.log(data);
@@ -25,7 +29,23 @@ const SignUp = () => {
         const loggedUser = result.user;
         console.log(loggedUser);
 
+        updateUserProfile(data.name, data.photoURL)
+          .then(() => {
+            console.log('user profile updated');
+            reset();
 
+            Swal.fire({
+              position: "center",
+              icon: "success",
+              title: "Successfully Sign Up",
+              showConfirmButton: false,
+              timer: 1500
+            });
+
+          })
+          .catch(error => console.log(error))
+
+        navigate(from, { replace: true });
 
       })
   }
@@ -33,12 +53,12 @@ const SignUp = () => {
 
 
   return (
-    <section>
+    <section className=''>
 
       <Helmet>
         <title>Taste Treasure | Sign Up</title>
       </Helmet>
-      <div className='container md:flex items-center justify-evenly  gap-10  md:pt-40'>
+      <div className='container md:flex items-center justify-evenly  gap-10  md:pt-28'>
 
         <div className='md:w-2/6'>
           <img src='https://i.ibb.co/jDMz1bj/login-page-banner.png' alt='' />
@@ -49,7 +69,7 @@ const SignUp = () => {
 
           <form onSubmit={handleSubmit(onSubmit)} noValidate="" action="" className="space-y-6">
             <div className="space-y-1 text-sm" bis_skin_checked="1">
-              <label htmlFor="username" className="block dark:text-gray-400">Username</label>
+              <label htmlFor="name" className="block dark:text-gray-400">Username</label>
               <input type="text" name="name" id="name" placeholder="Username" className="w-full px-4 py-3 rounded-md dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 focus:dark:border-violet-400"
                 {...register("name", { required: true })}
               />
@@ -65,6 +85,25 @@ const SignUp = () => {
               {errors.email && <span className='text-red-500'>This fild is required</span>}
             </div>
 
+            <div className='form-control'>
+              <label className='label'>
+                <span className='label-text dark:text-gray-400'>Image URL</span>
+              </label>
+
+              <input
+                {...register('photoURL', { required: true })}
+
+                type='text'
+                placeholder='Image URL'
+                className=' dark:bg-gray-900 text-white input input-bordered'
+              />
+
+              {errors.photoURL && (
+                <span className='mt-1 aext-red-500'>
+                  Image field is required
+                </span>
+              )}
+            </div>
 
 
             <div className="space-y-1 text-sm" bis_skin_checked="1">

@@ -1,4 +1,5 @@
 import { useContext } from "react";
+import { FaArrowRightFromBracket } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../../providers/AuthProviders";
 
@@ -63,14 +64,14 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="navbar-end">
-          <div className='flex items-center gap-5'>
+          <div className='flex items-center gap-2'>
 
 
             <div className="dropdown dropdown-end">
               <label tabIndex={0} className=" ">
                 {user &&
-                  <div className="tooltip  tooltip-left mt-4 " data-tip={user.displayName}>
-                    <button >  <img className=' mb-1 h-[40px] w-[40px] rounded-full' src={user?.photoURL} alt="" /> </button>
+                  <div className="tooltip  tooltip-left  mt-2 " data-tip={user.displayName}>
+                    <button >  <img className=' mb-1 h-[30px] w-[30px] rounded-full' src={user?.photoURL} alt="" /> </button>
                   </div>
                 }
               </label>
@@ -80,18 +81,13 @@ const Navbar = () => {
 
 
 
-            <div>
-              {
-                user ?
-                  <>
-                    <Link to='/login'>
-                      <button onClick={handleLogOut} className=" btn">LogOut</button>
-                    </Link>
-                  </> :
+            <div className="mr-2">
+              {user ?
+                <button onClick={handleLogOut} className=" pt-1"> <FaArrowRightFromBracket className="text-red-400 text-xl" />  </button> :
+                <Link className="" to='/login'>
+                  <button className=" btn ">Login</button>
+                </Link>
 
-                  <> <Link to='/login'>
-                    <button className=" btn">Login</button>
-                  </Link> </>
               }
             </div>
 
