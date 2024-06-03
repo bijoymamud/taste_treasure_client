@@ -1,14 +1,18 @@
 import React, { useContext } from 'react';
 import { Helmet } from 'react-helmet';
 import { FcGoogle } from "react-icons/fc";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import Swal from 'sweetalert2';
 import { AuthContext } from '../../providers/AuthProviders';
 
 
 const Login = () => {
 
-  const { signIn } = useContext(AuthContext)
+  const { signIn } = useContext(AuthContext);
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const from = location.state?.from?.pathname || "/";
 
   const handleLogin = event => {
     event.preventDefault();
@@ -31,6 +35,7 @@ const Login = () => {
         });
 
       })
+    navigate(from, { replace: true });
 
   }
 

@@ -8,6 +8,7 @@ import Login from "../pages/Login/Login";
 import Order from "../pages/OrderFood/Order";
 import OurMenu from "../pages/OurMenu/OurMenu";
 import SignUp from "../pages/SignUp/SignUp";
+import PrivateRoute from "./PrivateRoute";
 
 
 
@@ -31,7 +32,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "/order/:category",
-        element: <Order />
+        element: <PrivateRoute><Order /></PrivateRoute>
       },
       {
         path: "/login",
@@ -40,7 +41,8 @@ export const router = createBrowserRouter([
       {
         path: "/register",
         element: <SignUp />
-      }
+      },
+
 
     ]
   },
