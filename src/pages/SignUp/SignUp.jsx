@@ -1,14 +1,41 @@
+import { useContext } from 'react';
+import { Helmet } from 'react-helmet';
+import { useForm } from 'react-hook-form';
 import { FcGoogle } from "react-icons/fc";
 import { Link } from "react-router-dom";
-
+import { AuthContext } from '../../providers/AuthProviders';
 
 
 const SignUp = () => {
+  const {
+    register,
+    handleSubmit,
+    reset,
+    watch,
+    formState: { errors }
+  } = useForm();
+
+
+  const { createUser } = useContext(AuthContext);
+
+
+  const onSubmit = data => {
+    console.log(data);
+    createUser(data.email, data.password)
+      .then(result => {
+        const loggedUser = result.user;
+        console.log(loggedUser);
+      })
+  }
 
 
 
   return (
     <section>
+
+      <Helmet>
+        <title>Taste Treasure | Sign Up</title>
+      </Helmet>
       <div className='container md:flex items-center justify-evenly  gap-10  md:pt-40'>
 
         <div className='md:w-2/6'>
@@ -16,25 +43,34 @@ const SignUp = () => {
 
         </div>
         <div className="w-full max-w-md p-8 space-y-3 rounded-xl  dark:text-gray-100" bis_skin_checked="1">
-          <h1 className="text-2xl text-black font-bold text-center">Login</h1>
+          <h1 className="text-2xl text-black font-bold text-center">Sign Up</h1>
 
-          <form noValidate="" action="" className="space-y-6">
+          <form onSubmit={handleSubmit(onSubmit)} noValidate="" action="" className="space-y-6">
             <div className="space-y-1 text-sm" bis_skin_checked="1">
               <label htmlFor="username" className="block dark:text-gray-400">Username</label>
-              <input type="text" name="username" id="username" placeholder="Username" className="w-full px-4 py-3 rounded-md dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 focus:dark:border-violet-400" />
+              <input type="text" name="name" id="name" placeholder="Username" className="w-full px-4 py-3 rounded-md dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 focus:dark:border-violet-400"
+                {...register("name", { required: true })}
+              />
+              {errors.name && <span className='text-red-500'>This fild is required</span>}
             </div>
 
             <div className="space-y-1 text-sm" bis_skin_checked="1">
               <label htmlFor="email" className="block dark:text-gray-400">Email</label>
-              <input type="text" name="email" id="email" placeholder="Email Address" className="w-full px-4 py-3 rounded-md dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 focus:dark:border-violet-400" />
+              <input type="text" name="email" id="email" placeholder="Email Address" className="w-full px-4 py-3 rounded-md dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 focus:dark:border-violet-400"
+                {...register("email", { required: true })}
+
+              />
+              {errors.email && <span className='text-red-500'>This fild is required</span>}
             </div>
 
             <div className="space-y-1 text-sm" bis_skin_checked="1">
               <label htmlFor="password" className="block dark:text-gray-400">Password</label>
-              <input type="password" name="password" id="password" placeholder="Password" className="w-full px-4 py-3 rounded-md dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 focus:dark:border-violet-400" />
-
+              <input type="password" name="password" id="password" placeholder="Password" className="w-full px-4 py-3 rounded-md dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 focus:dark:border-violet-400"
+                {...register("password", { required: true })}
+              />
+              {errors.password && <span className='text-red-500'>This field is required</span>}
             </div>
-            \
+
 
 
 
