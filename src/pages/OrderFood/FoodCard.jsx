@@ -1,41 +1,44 @@
-import { useContext } from "react";
+import axios from "axios";
 import { useLocation, useNavigate } from "react-router-dom";
 import 'react-toastify/dist/ReactToastify.css';
 import Swal from "sweetalert2";
-import { AuthContext } from "../../providers/AuthProviders";
+import useAuth from "../../hooks/useAuth";
 
 
 const FoodCard = ({ item }) => {
 
   const { name, image, price, recipe, _id } = item;
-  const { user } = useContext(AuthContext);
+  const { user } = useAuth();
   const navigate = useNavigate()
   const location = useLocation();
 
   const handleAddToCart = item => {
     console.log(item);
     if (user && user.email) {
-      const cartItem = { menuItemId: _id, name, image, price, email: user.email }
-      fetch("http://localhost:5000/carts", {
-        method: "POST",
-        headers: {
-          'content-type': 'application/json'
-        },
-        body: JSON.stringify(cartItem)
-      })
 
-        .then(res => res.json())
-        .then(data => {
-          if (data.insertedId) {
+
+      const cartItem =
+      {
+        menuItemId: _id,
+        name,
+        image,
+        price,
+        email: user.email
+      }
+
+
+      axios.post('http://localhost:5000/carts', cartItem)
+        .then(res => {
+          console.log(res.data)
+          if (res.data.insertedId) {
             Swal.fire({
               position: "center",
               icon: "success",
-              title: "Food Added on the cart",
+              title: `${name} added into your cart`,
               showConfirmButton: false,
               timer: 1500
             });
           }
-
         })
     }
     else {
