@@ -1,12 +1,78 @@
 import { Helmet } from "react-helmet";
 import { FaDeleteLeft } from "react-icons/fa6";
+import Swal from "sweetalert2";
 import useCart from "../../../hooks/useCart";
 
 const MyCart = () => {
-  const [cart] = useCart();
+  const [cart, refetch] = useCart();
   console.log(cart);
   const total = parseFloat(cart.reduce((sum, item) => item.price + sum, 0).toFixed(2));
 
+
+  // const handleDelete = row => {
+
+  //   console.log(row);
+
+  //   Swal.fire({
+  //     title: "Are you sure?",
+  //     text: "You won't be able to revert this!",
+  //     icon: "warning",
+  //     showCancelButton: true,
+  //     confirmButtonColor: "#3085d6",
+  //     cancelButtonColor: "#d33",
+  //     confirmButtonText: "Yes, delete it!"
+  //   }).then((result) => {
+  //     if (result.isConfirmed) {
+  //       fetch(`http://localhost:5000/carts/${row._id}`, {
+  //         method: "DELETE",
+
+  //       })
+  //         .then(res => res.json())
+  //         .then(data => {
+  //           if (data.deletedCount > 0) {
+  //             refetch();
+  //             Swal.fire({
+  //               title: "Deleted!",
+  //               text: "Your file has been deleted.",
+  //               icon: "success"
+  //             });
+  //           }
+  //         })
+  //     }
+  //   });
+
+  // }
+
+  const handleDelete = (row) => {
+    console.log(row);
+
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!"
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch(`http://localhost:5000/carts/${row._id}`, {
+          method: "DELETE",
+        })
+          .then(res => res.json())
+          .then(data => {
+            if (data.deletedCount > 0) {
+              refetch();
+              Swal.fire({
+                title: `${row.name} Deleted From Cart`,
+                icon: "success"
+              });
+            }
+          })
+
+      }
+    });
+  }
 
 
 
@@ -36,7 +102,7 @@ const MyCart = () => {
               <th>Image</th>
               <th className="">Item Name</th>
               <th>Price</th>
-              <th></th>
+              <th>Action</th>
             </tr>
           </thead>
           <tbody>
@@ -62,39 +128,15 @@ const MyCart = () => {
                   <span className=" badge-lg text-gray-500">{row.name}</span>
                 </td>
                 <td className="text-lg text-[#ad813f]">$ {row.price}</td>
-                <th>
-                  <button className="btn btn-ghost btn-xs text-xl text-red-600"><FaDeleteLeft /></button>
-                </th>
+                <td>
+                  <button onClick={() => handleDelete(row)} className="btn btn-ghost btn-xs text-xl text-red-600"><FaDeleteLeft /></button>
+                </td>
               </tr>
               )
             }
 
             <tr>
-              {/* <th>
 
-              </th>
-              <td>
-                <div className="flex items-center gap-3">
-                  <div className="avatar">
-                    <div className="mask mask-squircle w-12 h-12">
-                      <img src="https://img.daisyui.com/tailwind-css-component-profile-2@56w.png" alt="Avatar Tailwind CSS Component" />
-                    </div>
-                  </div>
-                  <div>
-                    <div className="font-bold">Hart Hagerty</div>
-                    <div className="text-sm opacity-50">United States</div>
-                  </div>
-                </div>
-              </td>
-              <td>
-                Zemlak, Daniel and Leannon
-                <br />
-                <span className="badge badge-ghost badge-sm">Desktop Support Technician</span>
-              </td>
-              <td>Purple</td>
-              <th>
-                <button className="btn btn-ghost btn-xs text-sm">Details</button>
-              </th> */}
             </tr>
 
           </tbody>

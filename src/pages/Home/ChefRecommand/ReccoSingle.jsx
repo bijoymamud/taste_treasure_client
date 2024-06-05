@@ -15,8 +15,7 @@ const ReccoSingle = ({ item }) => {
           </h2>
           <p className="text-gray-500">{recipe}</p>
           <div className="card-actions justify-center mt-5">
-            <div className="btn btn-wide text-lg uppercase">Add Cart</div>
-            {/* <div className="badge badge-outline">Products</div> */}
+
           </div>
         </div>
       </div>
