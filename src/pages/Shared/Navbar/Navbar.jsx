@@ -1,11 +1,16 @@
 import { useContext, useEffect } from "react";
 import { FaArrowRightFromBracket } from "react-icons/fa6";
+import { RiShoppingCart2Fill } from "react-icons/ri";
 import { Link } from "react-router-dom";
+import useCart from "../../../hooks/useCart";
 import { AuthContext } from "../../../providers/AuthProviders";
 
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
+
+  const [cart] = useCart();
+  console.log(cart);
 
   const handleLogOut = () => {
     logOut()
@@ -13,7 +18,7 @@ const Navbar = () => {
       .catch(error => console.log(error))
   }
 
-
+  useEffect
 
   const navOptions = <>
     <li tabIndex={0}>
@@ -42,8 +47,8 @@ const Navbar = () => {
       <li tabIndex={0}>
         <Link className='font-bold text-lg focus:text-yellow-500 active:text-white' to="/order/salad">
 
-          Inbox
-          <div className="badge badge-error text-white">+99</div>
+          <RiShoppingCart2Fill className="text-2xl" />
+          <div className=" badge badge-md badge-warning text-black font-extrabold">+{cart?.length || 0}</div>
 
         </Link>
       </li>
