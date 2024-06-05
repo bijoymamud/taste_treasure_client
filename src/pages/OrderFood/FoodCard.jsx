@@ -26,6 +26,7 @@ const FoodCard = ({ item }) => {
         name,
         image,
         price,
+
         email: user.email
       }
       fetch("http://localhost:5000/carts", {

@@ -16,7 +16,7 @@ const Dashboard = () => {
         </div>
         <div className="drawer-side ">
           <label htmlFor="my-drawer-2" aria-label="close sidebar" className="drawer-overlay"></label>
-          <ul className="menu p-4  w-80 min-h-full text-lg font-medium text-black ">
+          <ul className="menu p-4  w-80 min-h-full  font-medium text-black ">
             {/* Sidebar content here */}
             <li><Link><RiHome2Fill />User Home</Link></li>
             <li><Link to="/dashboard/mycart"><RiShoppingCart2Fill />My Cart</Link></li>
