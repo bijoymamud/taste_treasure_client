@@ -45,7 +45,7 @@ const Navbar = () => {
     {user &&
 
       <li tabIndex={0}>
-        <Link className='font-bold text-lg focus:text-yellow-500 active:text-white' to="/order/salad">
+        <Link className='font-bold text-lg focus:text-yellow-500 active:text-white' to="/dashboard/mycart">
 
           <RiShoppingCart2Fill className="text-2xl" />
           <div className=" badge badge-md badge-warning text-black font-extrabold">+{cart?.length || 0}</div>
