@@ -1,9 +1,9 @@
 import React, { useContext } from 'react';
 import { Helmet } from 'react-helmet';
-import { FcGoogle } from "react-icons/fc";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import Swal from 'sweetalert2';
 import { AuthContext } from '../../providers/AuthProviders';
+import SocialLogin from '../SocialLogin/SocialLogin';
 
 
 const Login = () => {
@@ -87,9 +87,10 @@ const Login = () => {
             <div className="flex-1 h-px sm:w-16 bg-gray-700" bis_skin_checked="1"></div>
           </div>
           <div className="flex justify-center space-x-4" bis_skin_checked="1">
-            <button aria-label="Log in with Google" className="p-3 rounded-sm">
+            {/* <button aria-label="Log in with Google" className="p-3 rounded-sm">
               <FcGoogle className='text-gray-400 text-3xl' />
-            </button>
+            </button> */}
+            <SocialLogin />
 
           </div>
           <p className="text-sm text-center sm:px-6 dark:text-gray-400">Don't have an account?
