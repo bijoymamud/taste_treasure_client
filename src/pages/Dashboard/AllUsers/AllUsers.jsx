@@ -1,4 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
+import { Helmet } from "react-helmet";
+import { FaTrash, FaUserShield } from "react-icons/fa6";
+import Swal from "sweetalert2";
 
 const AllUsers = () => {
 
@@ -10,15 +13,110 @@ const AllUsers = () => {
     }
   })
 
-  if (isLoading) {
+  const handleDelete = (user) => {
+    console.log(user);
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!"
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch(`http://localhost:5000/users/${users._id}`, {
+          method: "DELETE"
+        })
+          .then(res => res.json())
+          .then(data => {
+            console.log(data);
 
+            if (data.deletedCount > 0) {
+              refetch();
+              Swal.fire({
+                title: "Deleted!",
+                text: "Your file has been deleted.",
+                icon: "success"
+              });
+            }
+          })
+      }
+    });
   }
 
 
   return (
-    <div>
-      <h2 className="uppercase">Total users: {users.length}</h2>
-    </div>
+    <section className="w-11/12">
+      <Helmet>
+        <title>Taste Treasure | All Users</title>
+      </Helmet>
+      <h2 className="uppercase text-lg font-extrabold">Total users : <span className="text-[#D1A054] text-xl">{users.length}</span></h2>
+
+
+
+      <div className="overflow-x-auto my-20">
+        <table className="table ">
+          {/* head */}
+          <thead>
+            <tr className="text-lg text-[#D1A054]">
+              <th>
+                {/* <label>
+                  <input type="checkbox" className="checkbox" />
+                </label> */}
+              </th>
+
+              <th>Name</th>
+              <th>Email</th>
+              <th>Role</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody className="text-lg w-full">
+
+            {
+              users.map((user, index) =>
+                <tr key={user._id}>
+                  <th>
+                    {index + 1}
+                  </th>
+                  <td>
+                    <div className="flex items-center gap-3">
+                      <div className="avatar">
+                        {/* <div className="mask mask-squircle w-16 h-16">
+                          <img src={user.img} />
+                        </div> */}
+                      </div>
+                      <div>
+                        <div className="font-bold">{user.name}</div>
+
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <span className="text-gray-500 text-lg">{user.email}</span>
+                    <br />
+
+                  </td>
+                  {/* <th className="text-center btn-ghost btn btn-xs">{user.role === 'admin' ? 'admin' : <FaUserShield />}</th> */}
+                  <th className="text-center">
+                    <button className="btn text-lg btn-ghost btn-xs hover:bg-amber-600 hover:text-white"><FaUserShield /></button>
+                  </th>
+                  <th className="text-center">
+                    <button onClick={() => handleDelete(user)} className="btn btn-ghost btn-xs  text-lg hover:bg-red-500 hover:text-white"><FaTrash /></button>
+                  </th>
+                </tr>)
+            }
+
+
+
+
+          </tbody>
+
+
+        </table>
+      </div>
+    </section>
   );
 };
 
