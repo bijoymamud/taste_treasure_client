@@ -18,7 +18,7 @@ const Dashboard = () => {
           <label htmlFor="my-drawer-2" aria-label="close sidebar" className="drawer-overlay"></label>
           <ul className="menu p-4  w-80 min-h-full  font-medium text-black ">
             {/* Sidebar content here */}
-            <li><Link><RiHome2Fill />User Home</Link></li>
+            <li><Link to="/dashboard/userhome"><RiHome2Fill />User Home</Link></li>
             <li><Link to="/dashboard/mycart"><RiShoppingCart2Fill />My Cart</Link></li>
             <li><Link><FaCalendar />Reservations</Link></li>
             <li><Link><FaWallet />Payment History</Link></li>
