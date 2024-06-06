@@ -25,7 +25,7 @@ const AllUsers = () => {
       confirmButtonText: "Yes, delete it!"
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/users/${users._id}`, {
+        fetch(`http://localhost:5000/users/${user._id}`, {
           method: "DELETE"
         })
           .then(res => res.json())
@@ -43,6 +43,33 @@ const AllUsers = () => {
           })
       }
     });
+  }
+
+
+  //change role of user
+  const handleChangeRole = (user) => {
+    console.log(user);
+
+    fetch(`http://localhost:5000/users/admin/${user._id}`, {
+      method: "PATCH"
+
+    })
+      .then(res => res.json())
+      .then(data => {
+        console.log(data);
+        if (data.modifiedCount) {
+          refetch();
+          Swal.fire({
+            position: "center",
+            icon: "success",
+            title: `${user.name} is Admin now`,
+            showConfirmButton: false,
+            timer: 1500
+          });
+        }
+
+      })
+
   }
 
 
@@ -98,9 +125,9 @@ const AllUsers = () => {
                     <br />
 
                   </td>
-                  {/* <th className="text-center btn-ghost btn btn-xs">{user.role === 'admin' ? 'admin' : <FaUserShield />}</th> */}
+
                   <th className="text-center">
-                    <button className="btn text-lg btn-ghost btn-xs hover:bg-amber-600 hover:text-white"><FaUserShield /></button>
+                    <button onClick={() => handleChangeRole(user)} className="  text-lg  btn-xs">{user.role === 'admin' ? 'admin' : <FaUserShield />}</button>
                   </th>
                   <th className="text-center">
                     <button onClick={() => handleDelete(user)} className="btn btn-ghost btn-xs  text-lg hover:bg-red-500 hover:text-white"><FaTrash /></button>
