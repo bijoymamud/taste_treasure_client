@@ -31,21 +31,35 @@ const SignUp = () => {
 
         updateUserProfile(data.name, data.photoURL)
           .then(() => {
+            const saveUser = { name: data.name, email: data.email }
             console.log('user profile updated');
-            reset();
 
-            Swal.fire({
-              position: "center",
-              icon: "success",
-              title: "Successfully Sign Up",
-              showConfirmButton: false,
-              timer: 1500
-            });
+            fetch("http://localhost:5000/users", {
+              method: "POST",
+              headers: {
+                'content-type': 'application/json'
+              },
+              body: JSON.stringify(saveUser)
+            })
+              .then(res => res.json())
+              .then(data => {
+                if (data.insertedId) {
+                  reset();
+                  Swal.fire({
+                    position: "center",
+                    icon: "success",
+                    title: "Successfully Sign Up",
+                    showConfirmButton: false,
+                    timer: 1500
+                  });
+                  navigate(from, { replace: true });
+                }
+              })
 
           })
           .catch(error => console.log(error))
 
-        navigate(from, { replace: true });
+
 
       })
   }

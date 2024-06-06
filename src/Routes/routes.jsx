@@ -10,6 +10,7 @@ import Login from "../pages/Login/Login";
 import Order from "../pages/OrderFood/Order";
 import OurMenu from "../pages/OurMenu/OurMenu";
 import SignUp from "../pages/SignUp/SignUp";
+import PrivateRoute from "./PrivateRoutes";
 
 
 
@@ -52,8 +53,8 @@ export const router = createBrowserRouter([
 
   //dashboard router start
   {
-    path: 'dashboard',
-    element: <Dashboard />,
+    path: "dashboard",
+    element: <PrivateRoute><Dashboard /></PrivateRoute>,
     children: [
       {
         path: 'mycart',

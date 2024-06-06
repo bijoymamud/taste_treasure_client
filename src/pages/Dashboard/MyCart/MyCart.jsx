@@ -9,39 +9,6 @@ const MyCart = () => {
   const total = parseFloat(cart.reduce((sum, item) => item.price + sum, 0).toFixed(2));
 
 
-  // const handleDelete = row => {
-
-  //   console.log(row);
-
-  //   Swal.fire({
-  //     title: "Are you sure?",
-  //     text: "You won't be able to revert this!",
-  //     icon: "warning",
-  //     showCancelButton: true,
-  //     confirmButtonColor: "#3085d6",
-  //     cancelButtonColor: "#d33",
-  //     confirmButtonText: "Yes, delete it!"
-  //   }).then((result) => {
-  //     if (result.isConfirmed) {
-  //       fetch(`http://localhost:5000/carts/${row._id}`, {
-  //         method: "DELETE",
-
-  //       })
-  //         .then(res => res.json())
-  //         .then(data => {
-  //           if (data.deletedCount > 0) {
-  //             refetch();
-  //             Swal.fire({
-  //               title: "Deleted!",
-  //               text: "Your file has been deleted.",
-  //               icon: "success"
-  //             });
-  //           }
-  //         })
-  //     }
-  //   });
-
-  // }
 
   const handleDelete = (row) => {
     console.log(row);
