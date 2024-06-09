@@ -51,7 +51,7 @@ const MyCart = () => {
       <div className="uppercase flex md:gap-96 items-center mt-16">
         <h2 className="text-lg font-extrabold">Total Items : <span className="text-[#D1A054]">{cart.length}</span></h2>
         <div className="flex items-center space-x-4">
-          <h2 className="text-lg font-extrabold">Total Price : <span className="text-[#D1A054]">${total}</span></h2>
+          <h2 className="text-lg font-extrabold">Total Price : <span className="+">${total}</span></h2>
           <button className="btn btn-success text-white btn-sm">PAY</button>
         </div>
       </div>

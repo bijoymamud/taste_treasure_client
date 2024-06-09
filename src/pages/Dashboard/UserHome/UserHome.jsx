@@ -1,4 +1,5 @@
 import { useContext } from "react";
+import { Helmet } from "react-helmet";
 import useCart from "../../../hooks/useCart";
 import { AuthContext } from "../../../providers/AuthProviders";
 
@@ -11,6 +12,9 @@ const UserHome = () => {
   console.log(user);
   return (
     <section>
+      <Helmet>
+        <title>Taste Treasure | Profile</title>
+      </Helmet>
       <div className="mx-auto">
         <div className="container mx-auto px-4 py-4">
           <div className="grid grid-cols-3 gap-4 w-full ">

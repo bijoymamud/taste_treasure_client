@@ -56,6 +56,7 @@ const AllUsers = () => {
     })
       .then(res => res.json())
       .then(data => {
+        isLoading(true)
         console.log(data);
         if (data.modifiedCount) {
           refetch();
