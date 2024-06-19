@@ -5,6 +5,7 @@ import { AuthContext } from "../providers/AuthProviders";
 const useCart = () => {
 
   const { user } = useContext(AuthContext);
+
   const token = localStorage.getItem('access-token')
   const { refetch, data: cart = [], isLoading } = useQuery({
     queryKey: ['carts', user?.email],
@@ -16,6 +17,8 @@ const useCart = () => {
       });
       return res.json();
     }
+
+
   })
 
   return [cart, refetch, isLoading]
